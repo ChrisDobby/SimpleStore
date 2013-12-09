@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = @System.Configuration.ConfigurationManager.AppSettings["title"];
+}
+
+<script type="text/javascript">
+    function formatCurrency(value) {
+        return "£" + value.toFixed(2);
+    }
+
+    function preOrderText(availabilityDate) {
+        return "Will be sent " + availabilityDate;
+    }
+</script>
+
+<div data-bind="visible: loading">Loading...</div>
+
+@Html.Partial("_Home")
+@Html.Partial("_Checkout")
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/knockout")
+@Scripts.Render("~/bundles/sammy")
+@Scripts.Render("~/bundles/app")
+
+

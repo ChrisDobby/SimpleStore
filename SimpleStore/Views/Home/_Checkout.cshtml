@@ -1,0 +1,80 @@
+﻿<!-- ko with: checkout -->
+    <div class="well" data-bind="visible: canCheckout() == false">
+        Your shopping basket is empty.
+    </div>
+<form action="@Url.Content("~")Home/Checkout" method="POST" data-bind="visible: canCheckout, submit: checkoutAndPay" style="cursor:pointer;">
+    <div class="well">
+        <div data-bind="foreach: basket">
+            <div class="checkout-row">
+                <div class="checkout-item-wrapper">
+                    <div class="checkout-description" data-bind="text: (quantity + ' x ' + product.Name)"></div>
+                </div>
+                <div class="checkout-item-wrapper">
+                    <div class="checkout-price" data-bind="text: formatCurrency(cost())"></div>
+                </div>
+                <div class="checkout-last-item-wrapper">
+                    <div class="checkout-remove-button">
+                        <button class="btn btn-primary" data-bind="click: $parent.removeFromBasket">remove</button>
+                    </div>
+                </div>
+
+                <input type="hidden" data-bind="value: product.Id, attr:{name : 'items[' + $index() + '].productId'}" />
+                <input type="hidden" data-bind="value: quantity, attr:{name : 'items[' + $index() + '].quantity'}" />
+            </div>
+        </div>
+        <div class="checkout-total-row">
+            <div class="checkout-goods-header">goods</div>
+            <div class="checkout-total-goods" data-bind="text: formatCurrency(totalGoods())"></div>
+        </div>
+        <div class="checkout-total-row">
+            <div class="checkout-postage-header">postage</div>
+            <div class="checkout-total-postage" data-bind="text: formatCurrency(totalPostage())"></div>
+        </div>
+        <div class="checkout-total-row">
+            <div class="checkout-total-header">total</div>
+            <div class="checkout-total-total" data-bind="text: formatCurrency(totalCost())"></div>
+        </div>
+    </div>
+    <div class="well">
+        <fieldset id="deliveryFieldSet">
+            <legend>Contact and Delivery</legend>
+            <div>
+                <div class="form-group">
+                    <label for="emailAddress" class="control-label">email address</label>
+                    <input id="emailAddress" name="emailAddress" data-bind="value: emailAddress" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="confirmEmailAddress" class="control-label">confirm email</label>
+                    <input id="confirmEmailAddress" data-bind="value: confirmEmail" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="orderName" class="control-label">name</label>
+                    <input id="orderName" name="orderName" data-bind="value: name" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="orderAddress1" class="control-label">address</label>
+                    <input id="orderAddress1" name="orderAddress1" data-bind="value: address1" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <input id="orderAddress2" name="orderAddress2" data-bind="value: address2" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="orderAddress3" class="control-label">city</label>
+                    <input id="orderAddress3" name="orderAddress3" data-bind="value: address3" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="orderPostcode" class="control-label">postcode</label>
+                    <input id="orderPostcode" name="orderPostcode" data-bind="value: postcode" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="orderCountry" class="control-label">country</label>
+                    @Html.DropDownList("orderCountry", null, new Dictionary<string, object> { { "class", "form-control" } })
+                </div>
+            </div>
+
+            <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;" />
+        </fieldset>
+    </div>
+</form>
+<!-- /ko -->
+

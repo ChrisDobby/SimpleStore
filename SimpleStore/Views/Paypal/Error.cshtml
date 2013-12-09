@@ -1,0 +1,9 @@
+﻿@{
+    Layout = "~/Views/Shared/_CompleteLayout.cshtml";
+}
+
+<div>
+    <p>There was a problem with the data we received from Paypal.</p>  
+    <p>Please check that your payment has been processed by Paypal and, if so, contact us via the <a href="@System.Configuration.ConfigurationManager.AppSettings["companyWebsite"]">website</a> and we will be happy to arrange delivery of your order.</p>
+    <p>If the payment has not been processed by Paypal then you can <a href="/">start you order again here</a></p>
+</div>

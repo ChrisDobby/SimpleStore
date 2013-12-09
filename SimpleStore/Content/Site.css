@@ -1,0 +1,287 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validationMessage {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.product-row {
+    width: 100%;
+    min-height: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-bottom-color: lightgray;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.product-header-wrapper {
+    width: 150px;
+    height: 200px;
+    float: left;
+    display: table;
+}
+
+.product-header {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.product-image img {
+    max-width: 100px;
+    max-height: 80px;
+}
+
+.product-description-wrapper {
+    float: left;
+    height: 200px;
+    width: 30%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: table;
+}
+
+.product-description {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.product-text {
+    font-size: 12px;
+}
+
+.product-preorder-text {
+    font-size: 12px;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.product-price-wrapper {
+    width: 100px;
+    height: 200px;
+    float: left;
+    display: table;
+}
+
+.product-price {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+    .product-price .main-price {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .product-price .postage-price {
+        font-size: 10px;
+    }
+
+.product-basket-wrapper {
+    height: 200px;
+    width: 120px;
+    display: table;
+}
+
+.product-basket {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.basket-header-row {
+    margin-right: 70px;
+    height: 130px;
+}
+
+.basket-header-image {
+    height: 40px;
+}
+
+.basket-header-basket {
+    float: left;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.basket-header-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.basket-header-description {
+    float: left;
+    height: 130px;
+    width: 300px;
+    margin-left: 20px;
+}
+
+.hidden-view {
+    display: none;
+}
+
+.checkout-row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.checkout-description {
+    width: 350px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.checkout-price {
+    width: 60px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.checkout-remove-button {
+    margin-left: 10px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.checkout-item-wrapper {
+    display: table;
+    float: left;
+    height: 75px;
+}
+
+.checkout-last-item-wrapper {
+    display: table;
+    height: 75px;
+}
+
+.checkout-total-row {
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+.checkout-total-header, .checkout-goods-header, .checkout-postage-header {
+    float: left;
+    text-align: right;
+    margin-right: 100px;
+}
+
+.checkout-total-header {
+    font-weight: bold;
+}
+
+.checkout-total-goods, .checkout-total-postage, .checkout-total-total {
+    text-align: right;
+    padding-left: 20px;
+ 
+
+.checkout-total-total {
+    font-weight: bold;
+}
+
+#basketList {
+    width: 280px;
+}
+
+.product-basket-display-row {
+    width: 280px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.product-basket-display-quantity {
+    padding-top: 4px;
+    float: left;
+    width: 30px;
+    text-align: center;
+}
+
+.product-basket-display-name {
+    padding-top: 4px;
+    float: left;
+    width: 180px;
+}
+
+.product-basket-display-price {
+    padding-top: 4px;
+    text-align: right;
+    width: 40px;
+    float: left;
+}
+
+.product-basket-display-remove {
+    text-align: right;
+}
+
+    .product-basket-display-remove a {
+        font-size: 10px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+.product-basket-contents {
+    padding: 10px;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.out-of-stock-message {
+    padding: 20px;
+    font-weight: normal;
+}
+
+#deliveryFieldSet {
+    margin-top: 30px;
+}

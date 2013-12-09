@@ -1,0 +1,66 @@
+﻿<!-- ko with: home -->
+
+<div class="basket-header-row">
+    <div class="basket-header-basket">
+        <ul class="nav">
+            <li class="basket-header-title dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">shopping basket <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <div class="product-basket-contents">
+                            <div data-bind="visible: basketEmpty()">
+                                Your shopping basket is empty
+                            </div>
+                            <div data-bind="foreach: basket">
+                                <div class="product-basket-display-row">
+                                    <div class="product-basket-display-quantity" data-bind="text: quantity"></div>
+                                    <div class="product-basket-display-name" data-bind="text: product.Name"></div>
+                                    <div class="product-basket-display-price" data-bind="text: formatCurrency(cost())"></div>
+                                    <div class="product-basket-display-remove"><a class="btn btn-primary" data-bind="click: $parent.removeFromBasket">X</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <img class="basket-header-image" src="@Url.Content("~/Content/Images/basket.png")" />
+        <div>total <span data-bind="text: formatCurrency(productTotal())"></span></div>
+        <button data-bind="click: checkout, attr:{disabled: basketEmpty}" class="btn btn-primary">checkout</button>
+    </div>
+    <div class="basket-header-description">
+        Select the item(s) to purchase from the list below and click the 'add to basket button' to add a single one to the basket.  To add more than one click the button multiple times.  After selecting items to purchase click the 'checkout' button.
+    </div>
+</div>
+
+<div data-bind="foreach: products">
+    <div class="product-row">
+        <div class="product-header-wrapper">
+            <div class="product-header">
+                <div class="product-image">
+                    <img data-bind="attr:{src:Image}"/>                   
+                </div>
+                <div class="product-name" data-bind="text: Name"></div>
+            </div>
+        </div>
+        <div class="product-description-wrapper">
+            <div class="product-description">
+                <div class="product-text" data-bind="text:Description"></div>
+                <div class="product-preorder-text" data-bind="visible: PreOrder, text: preOrderText(AvailabilityText)"></div>
+            </div>
+        </div>
+        <div class="product-price-wrapper">
+            <div class="product-price">
+                <div class="main-price" data-bind="text: formatCurrency(Price)"></div>
+            </div>
+        </div>
+        <div class="product-basket-wrapper">
+            <div class="product-basket">
+                <button class="btn btn-primary" data-bind="visible: InStock, click: $parent.addToBasket">add to basket</button>
+                <div class="label label-primary out-of-stock-message" data-bind="visible: InStock == false">This item is currently out of stock</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /ko -->
