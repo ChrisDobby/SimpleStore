@@ -58,7 +58,6 @@
     <Compile Include="PaypalController.fs" />
     <Compile Include="ProductsController.fs" />
     <None Include="packages.config" />
-    <Compile Include="SQLEntityConnection1.fs" />
     <Content Include="MenuSample.xml" />
     <None Include="Web.config" />
   </ItemGroup>
