@@ -223,7 +223,7 @@ input[type="checkbox"].input-validation-error {
 .checkout-total-goods, .checkout-total-postage, .checkout-total-total {
     text-align: right;
     padding-left: 20px;
- 
+}
 
 .checkout-total-total {
     font-weight: bold;

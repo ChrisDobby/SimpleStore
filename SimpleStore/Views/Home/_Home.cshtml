@@ -38,26 +38,31 @@
         <div class="product-header-wrapper">
             <div class="product-header">
                 <div class="product-image">
-                    <img data-bind="attr:{src:Image}"/>                   
+                    <img data-bind="attr:{src:product.Image}"/>                   
                 </div>
-                <div class="product-name" data-bind="text: Name"></div>
+                <div class="product-name" data-bind="text: product.Name"></div>
             </div>
         </div>
         <div class="product-description-wrapper">
             <div class="product-description">
-                <div class="product-text" data-bind="text:Description"></div>
-                <div class="product-preorder-text" data-bind="visible: PreOrder, text: preOrderText(AvailabilityText)"></div>
+                <div class="product-text" data-bind="text:product.Description"></div>
+                <div class="product-preorder-text" data-bind="visible: product.PreOrder, text: preOrderText(product.AvailabilityText)"></div>
             </div>
         </div>
         <div class="product-price-wrapper">
             <div class="product-price">
-                <div class="main-price" data-bind="text: formatCurrency(Price)"></div>
+                <div class="main-price" data-bind="text: formatCurrency(product.Price)"></div>
+            </div>
+        </div>
+        <div class="product-quantity-wrapper">
+            <div class="product-quantity">
+                <input type="number" min="1" max="99" data-bind="value:quantity"/>
             </div>
         </div>
         <div class="product-basket-wrapper">
             <div class="product-basket">
-                <button class="btn btn-primary" data-bind="visible: InStock, click: $parent.addToBasket">add to basket</button>
-                <div class="label label-primary out-of-stock-message" data-bind="visible: InStock == false">This item is currently out of stock</div>
+                <button class="btn btn-primary" data-bind="visible: product.InStock, click: $parent.addToBasket">add to basket</button>
+                <div class="label label-primary out-of-stock-message" data-bind="visible: product.InStock == false">This item is currently out of stock</div>
             </div>
         </div>
     </div>
