@@ -1,11 +1,11 @@
 ﻿function BasketItem(quantity, product) {
     var item = this;
 
-    item.quantity = quantity;
+    item.quantity = ko.observable(quantity);
     item.product = product;
 
     item.cost = ko.computed(function () {
-        return item.quantity * item.product.Price;
+        return item.quantity() * item.product.Price;
     });
 }
 

@@ -7,7 +7,7 @@
         <div data-bind="foreach: basket">
             <div class="checkout-row">
                 <div class="checkout-item-wrapper">
-                    <div class="checkout-description" data-bind="text: (quantity + ' x ' + product.Name)"></div>
+                    <div class="checkout-description" data-bind="text: (quantity() + ' x ' + product.Name)"></div>
                 </div>
                 <div class="checkout-item-wrapper">
                     <div class="checkout-price" data-bind="text: formatCurrency(cost())"></div>

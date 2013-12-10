@@ -7,7 +7,7 @@
     self.productTotal = ko.computed(function () {
         var total = 0;
         for (var i = 0; i < self.basket().length; i++) {
-            total += self.basket()[i].product.Price * self.basket()[i].quantity;
+            total += self.basket()[i].product.Price * self.basket()[i].quantity();
         }
 
         return total;
@@ -18,7 +18,21 @@
     });
 
     self.addToBasket = function (product) {
-        self.basket.push(new BasketItem(1, product));
+        var item;
+        for (var i = 0; i < self.basket().length; i++) {
+            if (self.basket()[i].product.Id == product.Id) {
+                item = self.basket()[i];
+                break;
+            }
+        }
+
+        if (item == null) {
+            self.basket.push(new BasketItem(1, product));
+        } else {
+            var q = item.quantity();
+            q++;
+            item.quantity(q);
+        }
     };
 
     self.removeFromBasket = function (item) {
