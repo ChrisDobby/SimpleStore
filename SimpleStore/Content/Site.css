@@ -125,17 +125,9 @@ input[type="checkbox"].input-validation-error {
         font-size: 10px;
     }
 
-.product-quantity-wrapper {
-    width: 80px;
-    height: 200px;
-    float: left;
-    display: table;    
-}
-
 .product-quantity {
     text-align: center;
-    display: table-cell;
-    vertical-align: middle;    
+    margin-bottom: 5px;
 }
 
 .product-quantity input {
