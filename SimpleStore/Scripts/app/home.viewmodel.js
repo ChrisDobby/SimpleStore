@@ -8,10 +8,18 @@
 function HomeViewModel(app, dataModel) {
     var self = this;
 
-    self.products = ko.observableArray([]);
-    for (var p = 0; p < app.products().length;p++) {
-        self.products.push(new OrderProduct(app.products()[p], 1));
-    }
+    self.searchText = ko.observable("");
+
+    self.products = ko.computed(function () {
+        var prods = [];
+        ko.utils.arrayForEach(app.products(), function (p) {
+            if (p.Name.toLowerCase().indexOf(self.searchText()) >= 0) {
+                prods.push(new OrderProduct(p, 1));
+            }
+        });
+
+        return prods;
+    });
 
     self.basket = dataModel.basket;
 
@@ -55,7 +63,6 @@ function HomeViewModel(app, dataModel) {
 
     self.checkout = function () {
         location.hash = "checkout";
-//        app.navigateToCheckout();
     };
 }
 

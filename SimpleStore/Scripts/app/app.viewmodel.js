@@ -83,6 +83,8 @@ function AppViewModel(dataModel, siteRoot) {
         Loading: {} // Other views are added dynamically by app.addViewModel(...).
     };
 
+    self.Models = {};
+
     // UI state
     self.errors = ko.observableArray();
     self.user = ko.observable(null);
@@ -139,7 +141,14 @@ function AppViewModel(dataModel, siteRoot) {
                 return null;
             }
 
-            return new options.factory(self, dataModel);
+            var existingModel = self.Models[options.name];
+            if (existingModel != null) {
+                return existingModel;
+            }
+
+            var model = new options.factory(self, dataModel);
+            self.Models[options.name] = model;
+            return model;
         });
 
         if (typeof (options.navigatorFactory) !== "undefined") {

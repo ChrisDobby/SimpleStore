@@ -292,3 +292,8 @@ input[type="checkbox"].input-validation-error {
 #deliveryFieldSet {
     margin-top: 30px;
 }
+
+.product-search {
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
