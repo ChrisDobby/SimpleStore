@@ -50,6 +50,7 @@ input[type="checkbox"].input-validation-error {
     min-height: 200px;
     margin-top: 20px;
     margin-left: 20px;
+    margin-bottom: 10px;
     border-bottom-color: lightgray;
     border-bottom-width: 1px;
     border-bottom-style: solid;
@@ -147,7 +148,7 @@ input[type="checkbox"].input-validation-error {
 
 .basket-header-row {
     margin-right: 70px;
-    height: 130px;
+    margin-bottom:50px;
 }
 
 .basket-header-image {
@@ -167,9 +168,6 @@ input[type="checkbox"].input-validation-error {
 }
 
 .basket-header-description {
-    float: left;
-    height: 130px;
-    width: 300px;
     margin-left: 20px;
 }
 
