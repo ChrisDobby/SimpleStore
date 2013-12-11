@@ -58,11 +58,6 @@
                 <div class="main-price" data-bind="text: formatCurrency(product.Price)"></div>
             </div>
         </div>
-        @*<div class="product-quantity-wrapper">
-            <div class="product-quantity">
-                <input type="number" min="1" max="99" data-bind="value:quantity"/>
-            </div>
-        </div>*@
         <div class="product-basket-wrapper">
             <div class="product-basket">
                 <div class="product-quantity">
@@ -73,6 +68,10 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="product-not-found" data-bind="visible:products().length == 0">
+    No matching products found........
 </div>
 
 <!-- /ko -->

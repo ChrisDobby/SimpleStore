@@ -297,3 +297,8 @@ input[type="checkbox"].input-validation-error {
     margin-left: 60px;
     margin-bottom: 20px;
 }
+
+.product-not-found {
+    margin-left: 60px;
+    margin-bottom: 20px;    
+}
