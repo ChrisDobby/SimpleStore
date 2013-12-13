@@ -36,16 +36,16 @@
         </div>
     </div>
     <div class="container body-content">
-        <!-- ko with: home -->
         <div class="jumbotron">
-            <p class="lead"><img style="height:70px; margin-right:30px" src="@System.Configuration.ConfigurationManager.AppSettings["imageUrl"]" />@System.Configuration.ConfigurationManager.AppSettings["description"]</p>
+            <p class="lead"><img style="height:70px; margin-right:30px" src="@System.Configuration.ConfigurationManager.AppSettings["imageUrl"]" />
+                <!-- ko with: home -->
+                @System.Configuration.ConfigurationManager.AppSettings["description"]
+                <!-- /ko -->
+                <!-- ko with: checkout -->
+                <span data-bind="visible: canCheckout">Ensure the order and delivery details are correct and click the Paypal button</span>                
+                <!-- /ko -->
+            </p>
         </div>
-        <!-- /ko -->
-        <!-- ko with: checkout -->
-        <div class="jumbotron">
-            <p class="lead"><img style="height:70px; margin-right:30px" src="@System.Configuration.ConfigurationManager.AppSettings["imageUrl"]" /><span data-bind="visible: canCheckout">Ensure the order and delivery details are correct and click the Paypal button</span></p>
-        </div>
-        <!-- /ko -->
         <div class="row">
             <div class="col-md-9">
                 @RenderBody()
